@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace MKProject\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use MKProject\User;
+use MKProject\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,14 +59,31 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \MKProject\User
      */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
+            /*
+            ,'nino_adult' => $data['nino_adult'],
+            'grado_actual' => $data['grado_actual'],
+            'grado_subir' => $data['grado_subir'],
+            'fecha_nacimiento' => $data['fecha_nacimiento'],
+            'edad' => $data['edad'],
+            'direccion' => $data['direccion'],
+            'telefono' => $data['telefono'],
+            'edo_civil' => $data['edo_civil'],
+            'ocupacion_prof' => $data['ocupacion_prof'],
+            'fecha_examen_anterior' => $data['fecha_examen_anterior'],
+            'fecha_ingreso' => $data['fecha_ingreso'],
+            'practicando' => $data['practicando'],
+            'doyang_que_pertenece' => $data['doyang_que_pertenece'],
+            'nombre_profesor' => $data['nombre_profesor'],
+            */
+
         ]);
     }
 }

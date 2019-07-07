@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
+Route::resource('RegisterUser', 'RegisterUserController');
+Route::post('/RegisterUser/create', 'RegisterUser@store');
+
+/*
 Route::get('persona/{nombre?}', function ($nombre=null) {
 
 if ($nombre) {
@@ -26,3 +28,7 @@ if ($nombre) {
 }
 
 })->where(array('nombre'=>'[a-z-A-Z]+'));
+*/
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

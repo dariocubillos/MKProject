@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace MKProject;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,23 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
+        /*
+            ,'nino_adult',
+            'grado_actual',
+            'grado_subir',
+            'fecha_nacimiento',
+            'edad',
+            'direccion',
+            'telefono',
+            'edo_civil',
+            'ocupacion_prof',
+            'fecha_examen_anterior',
+            'fecha_ingreso',
+            'practicando',
+            'doyang_que_pertenece',
+            'nombre_profesor'
+        */
     ];
 
     /**
